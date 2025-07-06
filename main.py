@@ -23,11 +23,16 @@ async def load_and_run_plugins():
             await getattr(module, f"run_{plugin}_plugin")()
 
 async def main():
-    await load_and_run_plugins()
-    print("Bot is running. Waiting for stop signal...")
-
-    await stop_event.wait()
-    print("Stop signal received. Shutting down...")
+    try:
+        await load_and_run_plugins()
+        print("Bot is running. Waiting for stop signal...")
+        await stop_event.wait()
+    except asyncio.CancelledError:
+        print("Main task cancelled. Shutting down gracefully...")
+    except Exception as e:
+        print("Error occurred in main():", e)
+    finally:
+        print("Bot is shutting down cleanly.")
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
@@ -44,12 +49,13 @@ if __name__ == "__main__":
     try:
         loop.run_until_complete(main())
     except KeyboardInterrupt:
-        print("Shutting down...")
+        print("Shutting down from KeyboardInterrupt...")
     except Exception as e:
-        print(e)
-        sys.exit(1)
+        print("Error in __main__:", e)
     finally:
         try:
             loop.close()
         except Exception:
             pass
+
+    sys.exit(0)
