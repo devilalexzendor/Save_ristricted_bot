@@ -30,8 +30,9 @@ MASTER_KEY = os.getenv("MASTER_KEY", "34924327c41ff8e7ad6334782f0198c6") # for s
 IV_KEY = os.getenv("IV_KEY", "d9c4f17f682a") # for decryption
 YT_COOKIES = os.getenv("YT_COOKIES", YTUB_COOKIES)
 INSTA_COOKIES = os.getenv("INSTA_COOKIES", INST_COOKIES)
-FREEMIUM_LIMIT = int(os.getenv("FREEMIUM_LIMIT", "0"))
+FREEMIUM_LIMIT = int(os.getenv("FREEMIUM_LIMIT", "10"))
 PREMIUM_LIMIT = int(os.getenv("PREMIUM_LIMIT", "500"))
 JOIN_LINK = os.getenv("JOIN_LINK", "https://t.me/MUNNAKIHWELI") # this link for start command message
 ADMIN_CONTACT = os.getenv("ADMIN_CONTACT", "https://t.me/itsmunnabhaiya")
+
 
