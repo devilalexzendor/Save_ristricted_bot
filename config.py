@@ -20,7 +20,7 @@ YTUB_COOKIES = """
 API_ID = os.getenv("API_ID", "20708013")
 API_HASH = os.getenv("API_HASH", "f0dbe59c7e43cc49fe9e83206ef9f828")
 BOT_TOKEN = os.getenv("BOT_TOKEN", "7895412742:AAFAb3dsuce_JvKe85332oF6eyOwK9D3PaM")
-MONGO_DB = os.getenv("MONGO_DB", "mongodb+srv://saved:saved@cluster0.r0js63z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB = os.getenv("MONGO_DB", "")
 OWNER_ID = list(map(int, os.getenv("OWNER_ID", "1188631841").split())) # list seperated via space
 DB_NAME = os.getenv("DB_NAME", "telegram_downloader")
 STRING = os.getenv("STRING", None) # optional
@@ -30,7 +30,8 @@ MASTER_KEY = os.getenv("MASTER_KEY", "34924327c41ff8e7ad6334782f0198c6") # for s
 IV_KEY = os.getenv("IV_KEY", "d9c4f17f682a") # for decryption
 YT_COOKIES = os.getenv("YT_COOKIES", YTUB_COOKIES)
 INSTA_COOKIES = os.getenv("INSTA_COOKIES", INST_COOKIES)
-FREEMIUM_LIMIT = int(os.getenv("FREEMIUM_LIMIT", "2"))
+FREEMIUM_LIMIT = int(os.getenv("FREEMIUM_LIMIT", "0"))
 PREMIUM_LIMIT = int(os.getenv("PREMIUM_LIMIT", "500"))
 JOIN_LINK = os.getenv("JOIN_LINK", "https://t.me/MUNNAKIHWELI") # this link for start command message
 ADMIN_CONTACT = os.getenv("ADMIN_CONTACT", "https://t.me/itsmunnabhaiya")
+
